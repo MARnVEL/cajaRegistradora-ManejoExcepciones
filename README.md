@@ -1,13 +1,14 @@
-# Juego de consola de interfaz básica con `C#`
+# Gestión de vuelto en caja registradora. ConsoleApp
 
 > Este proyecto se trata de una simple aplicación de consola creada con el **framework NET**.
 >
 > El objetivo de este proyecto es realizar prácticas para aprender **C#** y el marco de
 > trabajo **.NET-CORE**.
+> Mi interés central en este caso es la gestión de excepciones utilizando el patrón `try-catch` y también practicar con las herramientas de depuración que pone a disposición **Visual Studio Code** para desarrollar con **NET** utilizando el plugin *C# Dev Kit*.
 
 ## Sobre la APP
 
-> Esta es una sencilla aplicación de consola que consiste en la "gesión del vuelto" de dinero de una caja registradora en un comercio. Las principales características son:
+> Esta es una sencilla aplicación de consola que consiste en la *"gesión del vuelto"* de dinero de una caja registradora en un comercio. Las principales características son:
 >
 
 ## About the APP

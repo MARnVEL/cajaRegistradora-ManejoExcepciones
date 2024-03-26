@@ -1,5 +1,4 @@
 ﻿
-
 string? leerResultado = null;
 bool usarDatosPrueba = false;
 
@@ -105,6 +104,59 @@ do
 
 static void GenerarVuelto(int costo, int[] dineroEnCaja, int veintes, int dieces = 0, int cincos = 0, int unos = 0)
 {
+    int billetesVeinteDisponibles = dineroEnCaja[3] + veintes;
+    int billetesDiezDisponibles = dineroEnCaja[2] + dieces;
+    int billetesCincoDisponibles = dineroEnCaja[1] + cincos;
+    int billetesUnoDisponibles = dineroEnCaja[0] + unos;
+
+    int montoPagado = veintes * 20 + dieces * 10 + cincos * 5 + unos;
+    int vueltoNecesario = montoPagado - costo;
+
+    if (vueltoNecesario < 0)
+        throw new InvalidOperationException(
+            "Excepción de operación inválida (InvalidOperationException): No se proporcionó suficiente dinero para completar la transacción."
+        );
+
+    Console.WriteLine("El cajero prepara el siguiente cambio:");
+
+    while ((vueltoNecesario > 19) && (billetesVeinteDisponibles > 0))
+    {
+        billetesVeinteDisponibles--;
+        vueltoNecesario -= 20;
+        Console.WriteLine("\t Un veite");
+    }
+
+    while ((vueltoNecesario > 9) && (billetesDiezDisponibles > 0))
+    {
+        billetesDiezDisponibles--;
+        vueltoNecesario -= 10;
+        Console.WriteLine("\t Un diez");
+    }
+
+    while ((vueltoNecesario > 4) && (billetesCincoDisponibles > 0))
+    {
+        billetesCincoDisponibles--;
+        vueltoNecesario -= 5;
+        Console.WriteLine("\t Un cinco");
+    }
+
+    while ((vueltoNecesario > 0) && (billetesUnoDisponibles > 0))
+    {
+        billetesUnoDisponibles--;
+        vueltoNecesario -= 1;
+        Console.WriteLine("\t Un peso");
+    }
+
+    if (vueltoNecesario > 0)
+        throw new InvalidOperationException(
+            "Excepción de operación inválida (InvalidOperationException): La caja registradora no puede dar vuelto para el efectivo proporcionado."
+        );
+
+    dineroEnCaja[0] = billetesUnoDisponibles;
+    dineroEnCaja[1] = billetesCincoDisponibles;
+    dineroEnCaja[2] = billetesDiezDisponibles;
+    dineroEnCaja[3] = billetesVeinteDisponibles;
+
 
 }
 
@@ -130,9 +182,4 @@ static void CargarCajaCadaManana(int[,] registroDineroDiarioInicial, int[] diner
     dineroEnCaja[2] = registroDineroDiarioInicial[2, 1];
     dineroEnCaja[3] = registroDineroDiarioInicial[3, 1];
 }
-
-
-
-
-
 
