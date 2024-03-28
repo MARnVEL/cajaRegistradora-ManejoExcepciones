@@ -23,10 +23,10 @@
 >
 > El cliente ofrece el pago basándose en un algoritmo que determina una cantidad de billetes en cada denominación.
 >
-> Cada día, la caja registradora se carga al comienzo del día. A medida que se producen las transacciones, la caja registradora se gestiona mediante un método denominado `MakeChange` (los pagos del cliente entran y el cambio que se devuelve al cliente sale).
+> Cada día, la caja registradora se carga al comienzo del día. A medida que se producen las transacciones, la caja registradora se gestiona mediante un método denominado `GenerarVuelto` (los pagos del cliente entran y el cambio que se devuelve al cliente sale).
 >
 > En el "programa principal" se realiza un cálculo de "verificación de seguridad" independiente que se utiliza para verificar la cantidad de dinero en la caja.
-> Esta verificación de seguridad se utiliza para garantizar que la lógica del método `MakeChange` funcione como se esperaba.
+> Esta verificación de seguridad se utiliza para garantizar que la lógica del método `GenerarVuelto` funcione como se esperaba.
 >
 
 ## About the APP
@@ -45,10 +45,10 @@
 >
 > The customer  offers payment based on an algorithm that determines a number of bills in each denomination.
 >
-> Each day, the cash till is loaded at the start of the day. As transactions occur, the cash till is managed in a method named `MakeChange` (customer  payments go in and the change returned to the customer comes out).
+> Each day, the cash till is loaded at the start of the day. As transactions occur, the cash till is managed in a method named `GenerarVuelto` (customer  payments go in and the change returned to the customer comes out).
 >
 > A separate "safety check" calculation that's used to verify the amount of money in the till is performed in the "main program".
-> This safety check is used to ensure that logic in the `MakeChange` method is working as expected.
+> This safety check is used to ensure that logic in the `GenerarVuelto` method is working as expected.
 >
 
 ## Tecnologías utilizadas:
